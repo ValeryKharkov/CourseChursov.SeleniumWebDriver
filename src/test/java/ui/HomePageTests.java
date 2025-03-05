@@ -27,6 +27,7 @@ public class HomePageTests {
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+
         driver.manage().window().maximize();
         String actualTitle = driver.getTitle();
 
@@ -38,14 +39,11 @@ public class HomePageTests {
 
     @Test
     void openWebFormTest() {
-        WebDriver driver = new ChromeDriver();
 
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
 
-        WebElementsPage elementsPage = driver.findElement(By.xpath("//a[@href='web-form.html']"));
-        elementsPage.click();
-
-        driver.quit();
+        WebElement element = driver.findElement(By.xpath("//a[@href='web-form.html']"));
+        element.click();
 
     }
 }
